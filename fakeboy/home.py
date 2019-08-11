@@ -18,7 +18,9 @@ def home():
         photo = request.files["photo"]
         TARGET_DIR = os.path.join(ROOT_DIR, "/static/database/photos/")
         photo_path = os.path.join(TARGET_DIR, human.full_name_safe + "_photo.png")
-        if not os.path.isdir(TARGET_DIR): os.mkdir(TARGET_DIR)
+
+        if not os.path.isdir(TARGET_DIR):
+            os.mkdir(TARGET_DIR)
         photo.save(photo_path)
 
         card = AadhaarCard(
@@ -29,7 +31,7 @@ def home():
             female_front_template_path=os.path.join(ROOT_DIR, "/static/templates/female_front_template.png"),
             back_template_path=os.path.join(ROOT_DIR, "/static/templates/back_template.png"),
             front_save_path=os.path.join(ROOT_DIR, "/static/database/ids/" + human.full_name_safe + "_front.png"),
-            back_save_path=os.path.join(ROOT_DIR, "/static/database/ids/" + human.full_name_safe + "_back.png",
+            back_save_path=os.path.join(ROOT_DIR, "/static/database/ids/" + human.full_name_safe + "_back.png"),
             photo_path=photo_path,
         )
 
