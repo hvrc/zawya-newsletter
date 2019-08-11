@@ -16,7 +16,7 @@ def home():
         )
 
         photo = request.files["photo"]
-        photo_path = ROOT_DIR + "/static/database/images/" + human.full_name_safe + "_photo.png"
+        photo_path = ROOT_DIR + "/static/database/photos/" + human.full_name_safe + "_photo.png"
         photo.save(photo_path)
 
         card = AadhaarCard(
