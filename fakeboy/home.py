@@ -16,18 +16,18 @@ def home():
         )
 
         photo = request.files["photo"]
-        photo_path = f"{ROOT_DIR}/static/database/images/{human.full_name_safe}_photo.png"
+        photo_path = ROOT_DIR + "/static/database/images/" + human.full_name_safe + "_photo.png"
         photo.save(photo_path)
 
         card = AadhaarCard(
-            font_path=f"{ROOT_DIR}/static/fonts/calibri_bold.ttf",
-            devanagari_font_path=f"{ROOT_DIR}/static/fonts/adobe_devanagari_bold.otf",
-            aadhaar_number_font_path=f"{ROOT_DIR}/static/fonts/open_sans_bold.ttf",
-            male_front_template_path=f"{ROOT_DIR}/static/templates/male_front_template.png",
-            female_front_template_path=f"{ROOT_DIR}/static/templates/female_front_template.png",
-            back_template_path=f"{ROOT_DIR}/static/templates/back_template.png",
-            front_save_path=f"{ROOT_DIR}/static/database/ids/{human.full_name_safe}_front.png",
-            back_save_path=f"{ROOT_DIR}/static/database/ids/{human.full_name_safe}_back.png",
+            font_path=ROOT_DIR + "/static/fonts/calibri_bold.ttf",
+            devanagari_font_path=ROOT_DIR + "/static/fonts/adobe_devanagari_bold.otf",
+            aadhaar_number_font_path=ROOT_DIR + "/static/fonts/open_sans_bold.ttf",
+            male_front_template_path=ROOT_DIR + "/static/templates/male_front_template.png",
+            female_front_template_path=ROOT_DIR + "/static/templates/female_front_template.png",
+            back_template_path=ROOT_DIR + "/static/templates/back_template.png",
+            front_save_path=ROOT_DIR + "/static/database/ids/" + human.full_name_safe + "_front.png",
+            back_save_path=ROOT_DIR + "/static/database/ids/" + human.full_name_safe + "_back.png",
             photo_path=photo_path,
         )
 
