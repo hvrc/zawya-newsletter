@@ -1,0 +1,9 @@
+__pycache__
+fakeboy/__pycache__
+fakeboy/scripts/__pycache__
+._.DS_Store
+.DS_Store
+instance
+venv
+venv/
+*.pyc
