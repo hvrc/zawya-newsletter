@@ -1,7 +1,6 @@
 from fakeboy import app
 from fakeboy.scripts.main import *
 from flask import render_template, request
-import os
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,10 +16,9 @@ def home():
         )
 
         photo = request.files["photo"]
-        TARGET_DIR = ROOT_DIR + "/static/database/photos"
+        TARGET_DIR = ROOT_DIR + "/static/database/photos/"
         photo_path = TARGET_DIR + human.full_name_safe + "_photo.png"
-        if not os.path.isdir(TARGET_DIR):
-            os.mkdir(TARGET_DIR)
+        if not os.path.isdir(TARGET_DIR): os.mkdir(TARGET_DIR)
         photo.save(photo_path)
 
         card = AadhaarCard(
