@@ -1,6 +1,7 @@
 from fakeboy import app
 from fakeboy.scripts.main import *
 from flask import render_template, request
+import os
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
