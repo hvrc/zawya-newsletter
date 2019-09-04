@@ -1,0 +1,4 @@
+clear db
+unique ids for photos
+url to clear cache
+revamp

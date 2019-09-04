@@ -1,4 +1,4 @@
-import sys, os, random, csv, shutil
+import sys, os, random, csv, shutil, time
 from datetime import datetime
 from PIL import Image, ImageFont, ImageDraw
 from indic_transliteration import sanscript
@@ -7,7 +7,7 @@ from indic_transliteration.sanscript import transliterate
 class Human:
     def __init__(self, full_name, gender, date_of_birth):
         Human.full_name = full_name
-        Human.full_name_safe = full_name.replace(" ", "_")
+        Human.full_name_safe = full_name.replace(" ", "_") + "_" + str(time.time())
         Human.full_name_devanagri = transliterate(Human.full_name.lower(), sanscript.ITRANS, sanscript.DEVANAGARI)
         Human.gender = gender
         Human.date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d").strftime("%d/%m/%Y")
