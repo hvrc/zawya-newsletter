@@ -1,1 +1,1 @@
-web: gunicorn fakeboy:app
+web: gunicorn zawya_newsletter_webapp:app

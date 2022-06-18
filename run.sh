@@ -7,6 +7,6 @@ else
     . venv/bin/activate
 fi
 open http://127.0.0.1:5000/
-export FLASK_APP=fakeboy
+export FLASK_APP=zawya_newsletter_webapp
 export FLASK_ENV=development
 flask run
