@@ -42,7 +42,7 @@ class Parser():
         return template
 
     def output_html_file(self):
-        downloads_path = str(Path.home() / "Downloads")
+        downloads_path = str(os.path.join(Path.home(), "Downloads"))
         filename = downloads_path + "/output.html"
         template = self.load_jinja_template()
         output = template.render(self.content_dict)
