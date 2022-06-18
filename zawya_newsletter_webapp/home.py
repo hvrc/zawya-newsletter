@@ -9,15 +9,28 @@ def home():
     if request.method == "POST":
         posts = [post[1] for post in request.form.items()]
         links = posts[0].splitlines()
-
         parser = Parser(links, root_dir)
         parser.generate_elements_dict()
         parser.output_html_file()
 
         return render_template(
             "home.html",
+            parsed=True,
         )
 
     return render_template(
         "home.html",
+        parsed=False
+    )
+
+@app.route("/template", methods=["POST", "GET"])
+def template():
+    return render_template(
+        "template.html",
+    )
+
+@app.route("/output", methods=["POST", "GET"])
+def output():
+    return render_template(
+        "output.html",
     )
