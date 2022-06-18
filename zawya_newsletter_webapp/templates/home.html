@@ -17,12 +17,11 @@
                     <textarea class="form-control" id="links-text-area" name="links"></textarea>
                 </div>
                 <input class="btn btn-outline-primary" type="submit" value="Submit" id="search-button">
+                {% if parsed %}
+                  <a href="/output" target="_blank" class="btn btn-outline-success" role="button"> Output </a>
+                {% endif %}
             </form>
             <br>
-
-            {% if parsed %}
-              <a href="/output" target="_blank"> Output </a>
-            {% endif %}
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
