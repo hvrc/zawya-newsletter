@@ -9,7 +9,8 @@ def home():
     if request.method == "POST":
         posts = [post[1] for post in request.form.items()]
         links = posts[0].splitlines()
-        parser = Parser(links, root_dir)
+        template_name = posts[1]
+        parser = Parser(root_dir, links, template_name)
         parser.generate_elements_dict()
         parser.output_html_file()
 
