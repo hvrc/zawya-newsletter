@@ -16,13 +16,18 @@
                     <medium id="links-text-area-help" class="form-text text-muted"> Enter links here </medium>
                     <textarea class="form-control" id="links-text-area" name="links"></textarea>
                 </div>
-
-                <medium id="template-help" class="form-text text-muted"> Upload template </medium>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="template-upload" name="template" required>
-                    <label class="custom-file-label" for="template-upload" data-browse="Browse"> </label>
+                <medium id="template-help" class="form-text text-muted"> Template </medium>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light active">
+                        <input type="radio" name="options" id="template-radio-english-daily" name="template-radio" value="template_english_daily.html" autocomplete="off" checked> English Daily
+                    </label>
+                    <label class="btn btn-light">
+                        <input type="radio" name="options" id="template-radio-english-weekly" name="template-radio" value="template_english_weekly.html" autocomplete="off"> English Weekly
+                    </label>
+                    <label class="btn btn-light">
+                        <input type="radio" name="options" id="template-radio-arabic-weekly" name="template-radio" value="template_arabic_weekly.html" autocomplete="off"> Arabic Weekly
+                    </label>
                 </div> <br> <br>
-
                 <input class="btn btn-outline-primary" type="submit" value="Submit" id="search-button">
                 {% if parsed %}
                   <a href="/output" target="_blank" class="btn btn-outline-success" role="button"> Output </a>
