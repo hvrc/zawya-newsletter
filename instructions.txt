@@ -1,0 +1,11 @@
+to run the web app locally...
+
+0. make sure the computer has python (preferably python 3+) and pip (https://pypi.org/project/pip/) installed
+1. unzip the folder
+2. navigate into the folder using the terminal (mac) or command prompt (windows)
+3. once you have changed directory into the folder, run the command 'bash run.sh' (mac) or  'start run.bat' (windows). This will install the requirements in a virtual environment and open your browser to the local host.
+4. in the text area, copy paste the links with line breaks, ie. one below the other
+5. press submit and wait for the program to process the links and create the output file
+6. an output button should appear which when clicked, opens a new tab with the output file displayed
+7. to save this file, you will have to right click > save as (webpage, html) > save
+
