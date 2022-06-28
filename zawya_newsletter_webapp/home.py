@@ -12,6 +12,15 @@ parsed = False
 @app.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
+
+        if os.path.exists(target_path):
+            os.remove(target_path)
+            print(target_path + " deleted")
+
+        if os.path.exists(output_path):
+            os.remove(output_path)
+            print(output_path + " deleted")
+
         posts = [post[1] for post in request.form.items()]
         links = posts[0].splitlines()
         template = request.files["template"]
@@ -24,10 +33,6 @@ def home():
             "home.html",
             parsed=True,
         )
-
-    # if os.path.exists(output_path):
-    #     os.remove(output_path)
-    #     print(output_path + " deleted")
 
     return render_template(
         "home.html",
