@@ -3,19 +3,18 @@ from zawya_newsletter_webapp.scripts.html_parser import *
 from flask import render_template, request
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
-target_dir = root_dir + "/templates/"
+template_dir = root_dir + "/templates/"
 template_name = "template.html"
-target_path = target_dir + template_name
-output_path = target_dir + "output.html"
-parsed = False
+template_path = template_dir + template_name
+output_path = "zawya_newsletter_webapp/templates/output.html"
 
 @app.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
 
-        if os.path.exists(target_path):
-            os.remove(target_path)
-            print(target_path + " deleted")
+        if os.path.exists(template_path):
+            os.remove(template_path)
+            print(template_path + " deleted")
 
         if os.path.exists(output_path):
             os.remove(output_path)
@@ -23,9 +22,11 @@ def home():
 
         posts = [post[1] for post in request.form.items()]
         links = posts[0].splitlines()
+
         template = request.files["template"]
-        template.save(target_path)
-        parser = Parser(root_dir, links, template_name)
+        template.save(template_path)
+
+        parser = Parser(links, template_dir, template_name, output_path)
         parser.generate_elements_dict()
         parser.output_html_file()
 

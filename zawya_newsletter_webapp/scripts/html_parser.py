@@ -5,12 +5,12 @@ from pathlib import Path
 import requests, os, re
 
 class Parser():
-    def __init__(self, root_dir, links, template_name):
+    def __init__(self, links, template_dir, template_name, output_path):
         self.content_dict = {}
-        self.root = root_dir
-        self.list_of_headlines = links
-        self.templates_dir = self.root + "/templates/"
+        self.links = links
+        self.template_dir = template_dir
         self.template_name = template_name
+        self.output_path = output_path
 
     def normalize_img_href(self, href, size):
         pattern = r"zXlarge"
@@ -30,7 +30,7 @@ class Parser():
     def generate_elements_dict(self):
         elements = ["href", "img_href", "title", "subtitle"]
 
-        for key, link in enumerate(self.list_of_headlines):
+        for key, link in enumerate(self.links):
             # print(f"----Processing link {key + 1}----")
             parsed = self.parse_headline(link)
 
@@ -38,12 +38,12 @@ class Parser():
                 self.content_dict[f"_{key+1}_headline_{elm}"] = parsed[elm_key]
 
     def load_jinja_template(self):
-        env = Environment(loader=FileSystemLoader(searchpath=self.templates_dir))
+        env = Environment(loader=FileSystemLoader(searchpath=self.template_dir))
         template = env.get_template(self.template_name)
         return template
 
     def output_html_file(self):
-        filename = "zawya_newsletter_webapp/templates/output.html"
+        filename = self.output_path
         template = self.load_jinja_template()
         output = template.render(self.content_dict)
 
