@@ -1,6 +1,6 @@
 from zawya_newsletter_webapp import app
 from zawya_newsletter_webapp.scripts.html_parser import *
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
 template_dir = root_dir + "/templates/"
@@ -11,14 +11,6 @@ output_path = "zawya_newsletter_webapp/templates/output.html"
 @app.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
-
-        if os.path.exists(template_path):
-            os.remove(template_path)
-            print(template_path + " deleted")
-
-        if os.path.exists(output_path):
-            os.remove(output_path)
-            print(output_path + " deleted")
 
         posts = [post[1] for post in request.form.items()]
         links = posts[0].splitlines()

@@ -3,36 +3,32 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.65, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="static/css/main.css">
         <!-- <link rel="shortcut icon" href=""> -->
         <title> Zawya Newsletter Webapp </title>
     </head>
     <div class="container">
         <body>
-            <br>
+          <br>
+          <h3> Zawya Newsletter Webapp </h3>
             <form method="post" action="/" enctype="multipart/form-data">
                 <div class="form-group">
-                    <medium id="links-text-area-help" class="form-text text-muted"> Enter links here </medium>
-                    <textarea class="form-control" id="links-text-area" name="links"></textarea>
+                    <p> Enter links here </p>
+                    <textarea class="form-control" id="links-text-area" name="links" rows="20"></textarea>
                 </div>
-
-                <medium id="template-help" class="form-text text-muted"> Upload template </medium>
+                <br>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="template-upload" name="template" required>
-                    <label class="custom-file-label" for="template-upload" data-browse="Browse"> </label>
-                </div> <br> <br>
-
-                <input class="btn btn-outline-primary" type="submit" value="Submit" id="search-button">
+                    <p> Upload a template </p>
+                    <a href="#"> <input class="custom-file-input" type="file" name="template" id="template-upload" required> </a>
+                </div>
+                <br>
+                <a href="#"> <input type="submit" value="Submit" id="search-button"> </a>
+                <br> <br>
                 {% if parsed %}
-                  <a href="/output" target="_blank" class="btn btn-outline-success" role="button"> Output </a>
+                <a href="/output" target="_blank"> Output </a>
                 {% endif %}
             </form>
             <br>
-
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         </body>
     </div>
 </html>
