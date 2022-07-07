@@ -1,45 +1,55 @@
 body {
-  color: #EADDCA;
+  color: #ffffff;
   font-family: monospace;
   font-size: 110%;
   text-align: center;
-  background-color: #F5DEB3;
+  background-color: #222222;
   padding-left: 3%;
   padding-right: 3%;
 }
 
 h3 {
-  color: #5C4033;
+  color: #00ff00;
 }
 
 p {
-  color: #5C4033;
-}
-
-a:link {
-  text-decoration: none;
-  color: #5C4033;
-}
-
-a:visited {
-  text-decoration: none;
-  color: #483C32;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #988558;
-}
-
-a:active {
-  text-decoration: none;
-  color: #E1C16E;
+  color: #ffffff;
 }
 
 textarea {
   width: 45%;
   height: auto;
-  background-color: #F5DEB3;
+  color: #ffffff;
+  background-color: #222222;
+}
+
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #00ff00;
+}
+
+a:active {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+#submit {
+  width: 7%;
+}
+
+#output {
+  background-color: #00ff00;
+  width: 7%;
 }
 
 br#big {

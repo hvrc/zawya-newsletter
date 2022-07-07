@@ -12,6 +12,14 @@ output_path = "zawya_newsletter_webapp/templates/output.html"
 def home():
     if request.method == "POST":
 
+        if os.path.exists(template_path):
+            os.remove(template_path)
+            print(template_path + " deleted")
+
+        if os.path.exists(output_path):
+            os.remove(output_path)
+            print(output_path + " deleted")
+
         posts = [post[1] for post in request.form.items()]
         links = posts[0].splitlines()
 

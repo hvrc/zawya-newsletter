@@ -19,16 +19,16 @@
                 <br>
                 <div class="custom-file">
                     <p> Upload a template </p>
-                    <a href="#"> <input class="custom-file-input" type="file" name="template" id="template-upload" required> </a>
+                    <a href="#"> <input class="custom-file-input" id="template-upload" name="template" type="file" required> </a>
                 </div>
                 <br>
-                <a href="#"> <input type="submit" value="Submit" id="search-button"> </a>
-                <br> <br>
-                {% if parsed %}
-                <a href="/output" target="_blank"> Output </a>
-                {% endif %}
+                <a href="#"> <input id="submit" type="submit" value="Submit"> </a>
+                <br>
             </form>
             <br>
+            {% if parsed %}
+            <a href="/output" target="_blank"> <button id="output"> Output </button> </a>
+            {% endif %}
         </body>
     </div>
 </html>
